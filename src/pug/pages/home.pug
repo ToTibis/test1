@@ -1,0 +1,10 @@
+extends ../layout/main
+
+block mainVariables
+	- pageTitle = 'Главная';
+	- pageRootClass = 'home';
+	- pageId = 'js-page-home'
+	- activeNavIndex = 0
+
+block mainContent
+	include ../components/pages/home/example

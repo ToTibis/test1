@@ -1,0 +1,65 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.example {
+	display: block;
+	margin: 0 auto;
+	max-width: 66.666%;
+	min-width: rem(320px);
+	&__accent {
+		&-title {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			font-weight: normal;
+		}
+		&-resolutions {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			&-item {
+				background-color: get($colors, white);
+				padding: 0 $spacer * 0.66;
+				font-weight: 600;
+			}
+		}
+		&-ratio {
+			--#{$variable-prefix}aspect-ratio: 52.5%;
+		}
+		&-inner {
+			background: linear-gradient(
+				225deg,
+				transparent 12.5%,
+				get($colors, primary) 0
+			);
+		}
+	}
+	&__list {
+		counter-reset: example-counter;
+		&-item {
+			$item-width: rem(50px);
+
+			counter-increment: example-counter;
+			& + .example__list-item {
+				margin-top: $spacer;
+			}
+			&:before {
+				@include font-size($h3-font-size);
+				color: get($colors, white);
+				flex-shrink: 0;
+				content: counters(example-counter, '.');
+				width: $item-width;
+				height: $item-width;
+				display: inline-block;
+				text-align: center;
+				line-height: $item-width;
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: get($colors, primary);
+				margin-right: $spacer;
+			}
+		}
+	}
+}

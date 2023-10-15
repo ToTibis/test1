@@ -1,0 +1,24 @@
+- resolutions_list = ['360p', '720p', 'HD', 'Full HD', '4K'];
+-
+	count_list = [
+		'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores maxime, officia. Architecto debitis dicta dolores enim esse laudantium',
+		'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+		'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores maxime, officia. Architecto debitis dicta dolores enim esse laudantium maiores nesciunt, non possimus quam quod reiciendis, sequi, similique tempore totam veritatis?',
+	];
+
+.container-fluid
+		section.example
+			.example__accent
+				.example__accent-ratio.ratio
+					.example__accent-inner.p-3
+						.position-relative.h-100.d-flex.align-items-center
+							h1.example__accent-title.text-white.my-3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. In accusamus doloremque distinctio. Delectus sapiente nulla, mollitia veritatis unde veniam eius temporibus nostrum voluptate saepe, hic rem architecto repellat numquam. Quidem.
+							ul.example__accent-resolutions.mb-0.d-flex.justify-content-between.text-primary
+								each item in resolutions_list
+									li.example__accent-resolutions-item.text-uppercase #{item}
+			ol.example__list.mt-4
+				each item in count_list
+					li.example__list-item.d-flex.align-items-md-center #{item}
+
+
+
